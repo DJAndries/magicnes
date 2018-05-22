@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 
   magicnes_ctx* ctx = init_nes_components();
 
-  if (load_rom(ctx, "test_rom.nes")) {
+  if (!load_rom(ctx, "test_rom.nes")) {
     printf("Cannot open rom file");
     free_nes_components(ctx);
     return 1;

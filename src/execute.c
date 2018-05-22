@@ -44,6 +44,8 @@ void execute(magicnes_ctx* ctx) {
 void execution_loop(magicnes_ctx* ctx) {
   SDL_Event event;
 
+  magic6502_interrupt(ctx->cpu_ctx, MAGIC6502_INT_RESET);
+
   ctx->cycles_in_period = (CPU_CLOCK_RATE / 1000.0) * PERIOD_MS;
   ctx->period_start_ticks = SDL_GetTicks();
 
@@ -56,6 +58,6 @@ void execution_loop(magicnes_ctx* ctx) {
     if (ctx->period_start_ticks) {
       execute(ctx);
     }
-    period_delay(ctx);
+    /*period_delay(ctx);*/
   }
 }
