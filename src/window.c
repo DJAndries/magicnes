@@ -13,7 +13,6 @@ void init_window(magicnes_ctx* ctx) {
 }
 
 void render_window(void* pctx, unsigned char* screen_output) {
-  printf("render");
   int pitch = 256 * 3;
   unsigned char* pixels;
   magicnes_ctx* ctx = (magicnes_ctx*)pctx;

@@ -17,7 +17,7 @@ bin/libmagic6502.so:
 	cp $(magic6502_lib_dir)/lib/libmagic6502.so ./bin/libmagic6502.so
 
 bin/test_rom.nes:
-	cp ./test/full_palette.nes ./bin/test_rom.nes
+	cp ./test/color_test.nes ./bin/test_rom.nes
 
 obj/%.o: src/%.c
 	gcc -Wall -O -c $< -I$(magic2c02_lib_dir)/include -I$(magic6502_lib_dir)/include \
