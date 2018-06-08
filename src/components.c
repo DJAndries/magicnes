@@ -24,6 +24,7 @@ void interrupt_from_ppu(void* ctx) {
 magicnes_ctx* init_nes_components() {
   magicnes_ctx* ctx = (magicnes_ctx*)malloc(sizeof(magicnes_ctx));
   memset(ctx, 0, sizeof(magicnes_ctx));
+  memset(ctx->controller_status.button_status, 0, sizeof(unsigned char) * 8);
 
   ctx->memory = (unsigned char*)malloc(sizeof(unsigned char*) * 65536);
   memset(ctx->memory, 0, sizeof(unsigned char) * 65536);

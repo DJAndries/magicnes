@@ -4,8 +4,9 @@ magic6502_lib_dir = ../magic6502
 
 all: obj bin bin/libmagic6502.so bin/libmagic2c02.so bin/test_rom.nes bin/magicnes
 
-bin/magicnes: obj/main.o obj/components.o obj/execute.o obj/nes_file.o obj/window.o
-	gcc -lm -o bin/magicnes obj/main.o obj/components.o obj/execute.o obj/nes_file.o obj/window.o \
+bin/magicnes: obj/main.o obj/components.o obj/execute.o obj/nes_file.o obj/window.o obj/controller.o
+	gcc -lm -o bin/magicnes obj/main.o obj/components.o obj/execute.o obj/nes_file.o \
+		obj/window.o obj/controller.o \
 		-L$(magic6502_lib_dir)/lib -L$(magic2c02_lib_dir)/lib -L$(sdl_lib_dir)/lib -lmingw32 \
 		-lSDL2main -lSDL2 -l:libmagic6502.so -l:libmagic2c02.so
 

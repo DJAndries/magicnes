@@ -4,7 +4,7 @@
 
 void init_window(magicnes_ctx* ctx) {
   ctx->win = SDL_CreateWindow("magicnes", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-    256, 240, 0);
+    256, 240, SDL_WINDOW_RESIZABLE);
   ctx->renderer = SDL_CreateRenderer(ctx->win, -1, SDL_RENDERER_ACCELERATED
     | SDL_RENDERER_TARGETTEXTURE);
 
